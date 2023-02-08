@@ -5,16 +5,14 @@ var contentful = require("contentful");
 
 function App() {
   // this is just some spaceholder stuff until we have the actual contentful schemes and contents
-  const SPACE_ID = "g8l2kfm077sr";
-  const ENVIRONMENT_ID = "master";
-  const ACCESS_TOKEN = "9EjIonfJOKdfIZqZEJ1F3JW45WYFlGFZGt89iJ3fP5c";
+
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
     const client = contentful.createClient({
-      space: SPACE_ID,
-      environment: ENVIRONMENT_ID,
-      accessToken: ACCESS_TOKEN,
+      space: process.env.REACT_APP_SPACE_ID,
+      environment: process.env.REACT_APP_ENVIRONMENT_ID,
+      accessToken: process.env.REACT_APP_ACCESS_TOKEN,
     });
 
     client
