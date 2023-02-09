@@ -11,5 +11,8 @@ navbar {
 #main {
 }
 
+.imageSizing {
+  max-width: 400px;
+}
 footer {
 }
