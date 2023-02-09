@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 function Recipe({ recipe }) {
   console.log(recipe.fields.image.fields.description);
   return (
