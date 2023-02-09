@@ -1,6 +1,15 @@
 import "./App.css";
 import { useState, useEffect } from "react";
+import Nav from ".components/Nav.js";
+import Newsletter from ".components/Newsletter.js";
+import Button from ".components/Button.js";
+import Footer from ".components/Footer.js";
 import RecipeList from "./components/RecipeList";
+import Home from "./components/Home.js";
+import About from "./components/About.js";
+import Recipe from "./components/Recipe";
+import Categories from "./components/Categories";
+
 var contentful = require("contentful");
 
 function App() {
