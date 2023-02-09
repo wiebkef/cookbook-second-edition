@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Button() {
+function Contact() {
   return (
     <div>
-      
+      Contact Page
     </div>
   )
 }
 
-export default Button
+export default Contact

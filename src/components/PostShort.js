@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Button() {
+function PostShort() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function Button() {
   )
 }
 
-export default Button
+export default PostShort
