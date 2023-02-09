@@ -5,9 +5,9 @@ var contentful = require("contentful");
 
 function App() {
   // this is just some spaceholder stuff until we have the actual contentful schemes and contents
-  const SPACE_ID = "g8l2kfm077sr";
+  const SPACE_ID = "buwqs2m20r3f";
   const ENVIRONMENT_ID = "master";
-  const ACCESS_TOKEN = "9EjIonfJOKdfIZqZEJ1F3JW45WYFlGFZGt89iJ3fP5c";
+  const ACCESS_TOKEN = "wKTnkMBASAaIl-QyQiJFVRVO6kpGoo9UM-x6oUK0m9g";
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ function App() {
     client
       .getEntries()
       .then((result) => {
-        console.log(result.items);
+        //console.log(result);
         setRecipes(result.items);
       })
       .catch(console.error);
