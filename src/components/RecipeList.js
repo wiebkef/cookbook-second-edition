@@ -1,13 +1,14 @@
 import React from "react";
-import Recipe from "./Recipe";
 import PostShort from "./PostShort";
+import Searchbar from "./Searchbar";
 
 function RecipeList({ recipes }) {
   return (
     <div>
+      <Searchbar />
       {recipes.map((recipe) => (
         <div>
-        <Recipe recipe={recipe} key={recipe.sys.id} /> 
+          <PostShort recipe={recipe} key={recipe.sys.id} />
         </div>
       ))}
     </div>
