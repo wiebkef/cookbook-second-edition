@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route, NavLink, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Nav from "./components/Nav";
+import Navigation from "./components/Nav";
 import Newsletter from "./components/Newsletter";
 import Button from "./components/Button";
 import Footer from "./components/Footer";
@@ -11,6 +11,8 @@ import About from "./components/About";
 import Contact from "./components/Contact"
 import Recipe from "./components/Recipe";
 import Categories from "./components/Categories";
+
+
 
 var contentful = require("contentful");
 
@@ -39,6 +41,10 @@ function App() {
 
   return (
     <div className="App">
+        <header>
+        <Navigation/>
+        </header>
+        <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -52,16 +58,8 @@ function App() {
             element={<Recipe recipes={recipes} />}
           />
         </Routes>
-      <header>
-        <div>Hello Navbar</div>
-      </header>
-      <section id="main">
-        <div>Hello main section</div>
-        <RecipeList recipes={recipes} />
-      </section>
-      <footer>
-        <div>hello footer</div>
-      </footer>
+        </main>
+
     </div>
   );
 }

@@ -1,3 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lora:wght@400;600;700&display=swap');
+
+
+
+.anton-font {
+  font-family: 'Anton', sans-serif;
+}
+
+.lora-font {  font-family: 'Lora', serif;}
+
+.white {
+  color: white;
+}
+
+
+.navbar-nav a {
+  color: white;
+  text-decoration: none;
+  font-family:'Anton', sans-serif; 
+  text-transform: uppercase;
+  padding: 0px 1rem .5rem;
+}
+
+.navbar-nav a.active {
+  border-bottom: 1px solid white;
+  color: white;
+}
 .App {
   text-align: center;
 }

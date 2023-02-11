@@ -1,0 +1,65 @@
+.hero {
+    background-image: url("../images/background-hero.jpg");
+    background-size: cover;
+    min-height: 50vh;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero h1 {
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6601015406162465) 0%, rgba(0,0,0,0) 100%);
+    z-index: 0;
+}
+
+.categories .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.categories .container .images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    justify-content: center;
+    background-color: #F4F4F6;
+    width: 100%;
+    margin: -125px 1rem 1rem 1rem;
+    z-index: 10;
+    box-shadow: 1px 3px 16px rgba(0,0,0,0.2);
+}
+
+.images img {
+    width: 100px;
+    margin-bottom: 1rem;
+}
+
+
+
+.scrolled {
+    background-color: rgba(169,169,169,0.0);
+    animation-name: showingoff; 
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    transition: background 1s;
+    box-shadow: 1px 3px 16px rgba(0,0,0,0.2);
+}
+
+@keyframes showingoff {
+    0% {background-color:rgba(169,169,169,0.0);}
+    100% {background-color:rgba(169,169,169,1);}
+}
