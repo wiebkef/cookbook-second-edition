@@ -7,8 +7,8 @@ function RecipeList({ recipes }) {
     <div>
       <Searchbar />
       {recipes.map((recipe) => (
-        <div>
-          <PostShort recipe={recipe} key={recipe.sys.id} />
+        <div key={recipe.sys.id}>
+          <PostShort recipe={recipe} />
         </div>
       ))}
     </div>

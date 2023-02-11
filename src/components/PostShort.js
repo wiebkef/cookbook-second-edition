@@ -1,9 +1,7 @@
 import React from "react";
+import { Route } from "react-router-dom";
 
 function PostShort({ recipe }) {
-  const date = new Date(recipe.fields.date);
-
-  console.log(date.toLocaleDateString());
   return (
     <div>
       <img
@@ -13,10 +11,10 @@ function PostShort({ recipe }) {
       />
       <div>{recipe.fields.time}</div>
       <div>{recipe.fields.level}</div>
-      <div>{date.toLocaleDateString()}</div>
+      <div>{new Date(recipe.fields.date).toLocaleDateString()}</div>
       <h2>{recipe.fields.title}</h2>
       <p>{recipe.fields.description.content[0].content[0].value}</p>
-      <button>read more</button>
+      <a href={`/recipes/${recipe.sys.id}`}>read more</a>
     </div>
   );
 }
