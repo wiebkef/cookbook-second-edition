@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import HeroInternal from "./HeroInternal";
+import Container from 'react-bootstrap/Container';
+import Button from './Button'
+import "../css/Recipe.css";
 var contentful = require("contentful");
 
 function Recipe() {
@@ -33,28 +37,71 @@ function Recipe() {
     return <div>loading</div>;
   } else {
     return (
-      <div>
-        <div>{recipe.fields.time}</div>
-        <div>{recipe.fields.level}</div>
+      <div  id="top">
+      <HeroInternal />
+      <Container>
+        <div className='post-header background_0'>
+          <div className="post-icons">
+            <div className="icons-wrapper">
+              <span class="material-symbols-outlined">schedule</span>
+              {recipe.fields.time}
+            </div>
+            <div className="icons-wrapper">
+              <span class="material-symbols-outlined">
+              auto_fix_high
+              </span>
+              {recipe.fields.level}
+            </div>
+            <div className="icons-wrapper">
+              <span class="material-symbols-outlined">
+              calendar_month
+              </span>
+              {new Date(recipe.fields.date).toLocaleDateString()}
+            </div>
 
-        <div>{new Date(recipe.fields.date).toLocaleDateString()}</div>
-        <h2>{recipe.fields.title}</h2>
-        <p>{recipe.fields.description.content[0].content[0].value}</p>
+          </div>
+          <h2 className="lora-font">{recipe.fields.title}</h2>
+          <p className="lora-font">{recipe.fields.description.content[0].content[0].value}</p>
+          <div className="buttons-wrapper">
+          <Button name="Ingredients" buttonClass="btn btn-primary" buttonTarget="#ingredients" />
+          <Button name="Tap for method" buttonClass="btn btn-secondary" buttonTarget="#method" />
+          </div>
+
+        </div>
+        <div className="recipe-main-image">   
+        <img
+          src={recipe.fields.image.fields.file.url}
+
+          alt={recipe.fields.image.fields.description}
+         />
+        </div>
+        <div id="ingredients" className="background_1">
+          <h3 className="lora-font">Ingredients</h3>
+          {recipe.fields.ingredients.map((ingredient, index) => (
+            <li className="lora-font" key={index}>{ingredient}</li>
+          ))}
+        </div>
+
+        <div id="method" className="background_2">
+        <h3 className="lora-font">Preparation</h3>
+        <div className="lora-font">{recipe.fields.preparation}</div>
+        <br />
+        <div className="buttons-wrapper">
+        <Button name="Back to the Top" buttonClass="btn btn-secondary" buttonTarget="#top" />
+        </div>
+        </div>
+
+      </Container>
+
+
+        <div></div>
+
 
         {/* We dont have tags yet in contentful */}
 
-        <img
-          src={recipe.fields.image.fields.file.url}
-          className="imageSizing"
-          alt={recipe.fields.image.fields.description}
-        ></img>
 
-        <h3>Ingredients</h3>
-        {recipe.fields.ingredients.map((ingredient, index) => (
-          <li key={index}>{ingredient}</li>
-        ))}
-        <h3>Preparation</h3>
-        <div>{recipe.fields.preparation}</div>
+
+
       </div>
     );
   }

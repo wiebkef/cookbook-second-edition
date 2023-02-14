@@ -6,12 +6,12 @@ function Latest({ recipes }) {
   return (
     <div>
       <Container>
-        <div className='latest-news'>
+        <div className='row'>
 
         {recipes.map((thumb) => (
-
-        <LatestThumb thumb={thumb} key={thumb.sys.id} /> 
-   
+          <div className='col-xs-12 col-sm-12 col-md-6 col-lg-3'>
+            <LatestThumb thumb={thumb} key={thumb.sys.id} /> 
+          </div>
       ))}
 
         </div>
