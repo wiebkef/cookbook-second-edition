@@ -12,21 +12,22 @@ import Contact from "./components/Contact";
 import Recipe from "./components/Recipe";
 import Categories from "./components/Categories";
 
-
-
 var contentful = require("contentful");
 
 function App() {
   // this is just some spaceholder stuff until we have the actual contentful schemes and contents
 
   const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState("");
+  const [recipesSearch, setRecipesSearch] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const client = contentful.createClient({
+    space: process.env.REACT_APP_SPACE_ID,
+    accessToken: process.env.REACT_APP_ACCESS_TOKEN,
+  });
 
   useEffect(() => {
-    const client = contentful.createClient({
-      space: process.env.REACT_APP_SPACE_ID,
-      accessToken: process.env.REACT_APP_ACCESS_TOKEN,
-    });
-
     client
       .getEntries("cookbook")
       .then((result) => {
@@ -36,23 +37,46 @@ function App() {
       .catch(console.error);
   }, []);
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    console.log(search);
+    client
+      .getEntries({
+        query: search,
+      })
+      .then((response) => {
+        console.log(response.items);
+        //console.log("HERE", entry);
+        setRecipes(response.items);
+        setLoading(false);
+      })
+      .catch(console.log("Promise: THERE IS AN ERROR"));
+  };
   return (
     <div className="App">
-        <header>
-        <Navigation/>
-        </header>
-        <main> 
-
+      <header>
+        <Navigation />
+      </header>
+      <main>
         <Routes>
           <Route path="/" element={<Home recipes={recipes} />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/recipes" element={<RecipeList recipes={recipes} />} />
+          <Route
+            path="/recipes"
+            element={
+              <RecipeList
+                recipes={recipes}
+                handleSearch={handleSearch}
+                setSearch={setSearch}
+              />
+            }
+          />
           <Route path="/recipes/:id" element={<Recipe recipes={recipes} />} />
         </Routes>
-        </main>  
-        
-        <div className="page-container">
+      </main>
+
+      <div className="page-container">
         <div className="Content-wrap">
           <hr />
           <Newsletter></Newsletter>
