@@ -1,9 +1,16 @@
+import "../css/Home.css";
 import React from 'react'
+import Hero from "./Hero"
+import Categories from "./Categories";
+import Latest from "./Latest";
 
-function Home() {
+
+function Home({ recipes }) {
   return (
     <div>
-        Home Page
+        <Hero />
+        <Categories />
+        <Latest recipes={recipes}  />
     </div>
   )
 }
