@@ -3,16 +3,28 @@ import PostShort from "./PostShort";
 import HeroInternal from "./HeroInternal";
 import Searchbar from "./Searchbar";
 
-function RecipeList({ recipes }) {
+function RecipeList({
+  recipes,
+  handleSearch,
+  setSearch,
+  searchTerm = "Recipes",
+}) {
   return (
     <div>
       <HeroInternal />
-      <Searchbar />
-      {recipes.map((recipe) => (
-        <div key={recipe.sys.id}>
-          <PostShort recipe={recipe} />
-        </div>
-      ))}
+      <Searchbar handleSearch={handleSearch} setSearch={setSearch} />
+
+      <h2>{searchTerm}</h2>
+      {console.log(recipes.length)}
+      {recipes.length > 0 ? (
+        recipes.map((recipe) => (
+          <div key={recipe.sys.id}>
+            <PostShort recipe={recipe} />
+          </div>
+        ))
+      ) : (
+        <div>No results</div>
+      )}
     </div>
   );
 }
