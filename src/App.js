@@ -18,7 +18,7 @@ function App() {
   // this is just some spaceholder stuff until we have the actual contentful schemes and contents
 
   const [recipes, setRecipes] = useState([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("Recipes");
   const [recipesSearch, setRecipesSearch] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -70,6 +70,7 @@ function App() {
                 handleSearch={handleSearch}
                 loading={loading}
                 setSearch={setSearch}
+                searchTerm={search}
               />
             }
           />
