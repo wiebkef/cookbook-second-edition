@@ -38,7 +38,9 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="page-container">
+      <div className="Content-wrap">
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -52,6 +54,8 @@ function App() {
             element={<Recipe recipes={recipes} />}
           />
         </Routes>
+      </div>
+      
       <header>
         <div>Hello Navbar</div>
       </header>
@@ -59,9 +63,12 @@ function App() {
         <div>Hello main section</div>
         <RecipeList recipes={recipes} />
       </section>
-      <footer>
-        <div>hello footer</div>
-      </footer>
+      <hr />
+      <Newsletter></Newsletter>
+      <hr />
+      <Footer>
+        <div>Footer Section</div>
+      </Footer>
     </div>
   );
 }
