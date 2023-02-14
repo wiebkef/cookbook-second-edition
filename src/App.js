@@ -36,23 +36,32 @@ function App() {
 
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/recipes" element={<RecipeList recipes={recipes} />} />
-        <Route path="/recipes/:id" element={<Recipe recipes={recipes} />} />
-      </Routes>
-      <header>
-        <div>Hello Navbar</div>
-      </header>
-      <section id="main">
-        <div>Hello main section</div>
-        <RecipeList recipes={recipes} />
-      </section>
-      <footer>
-        <div>hello footer</div>
-      </footer>
+     <div className="page-container">
+      <div className="Content-wrap">
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/recipes" element={<RecipeList recipes={recipes} />} />
+          <Route path="/recipes/:id" element={<Recipe recipes={recipes} />} />
+        </Routes>
+
+        <header>
+          <div>Hello Navbar</div>
+        </header>
+        <section id="main">
+          <div>Hello main section</div>
+          <RecipeList recipes={recipes} />
+        </section>
+        <hr />
+        <Newsletter></Newsletter>
+        <hr />
+        <Footer>
+          <div>Footer Section</div>
+        </Footer>
+       </div>
+      </div>
     </div>
   );
 }
