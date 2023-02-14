@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -40,8 +40,10 @@ function Navigation() {
 
      <Navbar className={ isScrolled ? "fixed-top scrolled" :  "fixed-top" }  expand="lg">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand >
+          <Link  to="/">
           <img src={logo} alt="Chomp Blog" width="150px"  />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className='justify-content-end' id="basic-navbar-nav" >
