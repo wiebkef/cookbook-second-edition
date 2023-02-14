@@ -13,8 +13,10 @@ function RecipeList({
     <div>
       <HeroInternal />
       <Searchbar handleSearch={handleSearch} setSearch={setSearch} />
+
       <h2>{searchTerm}</h2>
-      {recipes.length <= 0 ? (
+      {console.log(recipes.length)}
+      {recipes.length > 0 ? (
         recipes.map((recipe) => (
           <div key={recipe.sys.id}>
             <PostShort recipe={recipe} />

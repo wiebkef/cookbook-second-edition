@@ -68,6 +68,7 @@ function App() {
               <RecipeList
                 recipes={recipes}
                 handleSearch={handleSearch}
+                loading={loading}
                 setSearch={setSearch}
               />
             }
