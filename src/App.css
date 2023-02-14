@@ -43,3 +43,20 @@ navbar {
 }
 footer {
 }
+
+.page-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  }
+
+  .content-wrap{
+    flex:1;
+  }
+
+  .Newsletter{
+    background-image: url('https://images.pexels.com/photos/776656/pexels-photo-776656.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
