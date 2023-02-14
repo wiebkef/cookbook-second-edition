@@ -28,9 +28,9 @@ function App() {
     });
 
     client
-      .getEntries()
+      .getEntries("cookbook")
       .then((result) => {
-        //console.log(result);
+        console.log("SHJSHJ", result);
         setRecipes(result.items);
       })
       .catch(console.error);
