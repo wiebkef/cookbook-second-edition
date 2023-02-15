@@ -57,8 +57,18 @@
     transition: transform .7s;
 }
 
+.images a  {
+    text-decoration: none;
+    color: #333333;
+}
+
+.images a h3  {
+    text-transform: capitalize;
+}
+
 .images img:hover {
     transform: scale(1.05);
+    transform: rotate(-15deg);
 }
 
 .scrolled {
