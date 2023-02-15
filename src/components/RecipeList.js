@@ -7,8 +7,10 @@ function RecipeList({
   recipes,
   handleSearch,
   setSearch,
-  searchTerm = "Recipes",
+  searchTerm
 }) {
+
+  console.log('Aqui eh o termo' + searchTerm)
   return (
     <div>
       <HeroInternal />
