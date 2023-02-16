@@ -82,7 +82,7 @@ function Recipe() {
           ))}
         </div>
 
-        <div id="method" className="background_2">
+        <div id="method" className="background_2 mb-5">
         <h3 className="lora-font">Preparation</h3>
         <div className="lora-font">{recipe.fields.preparation}</div>
         <br />

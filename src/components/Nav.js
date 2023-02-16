@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from "../images/chomp-logo.svg";
 
-function Navigation({handleHome}) {
+function Navigation({handleHome, scrollToTop }) {
 
   const [scrollPosition, setSrollPosition] = useState(0);
 
@@ -48,10 +48,10 @@ function Navigation({handleHome}) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className='justify-content-end' id="basic-navbar-nav" >
           <Nav className="nav justify-content-end">
-            <NavLink to="/"  onClick={(e) => handleHome()}>Home</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/recipes">Recipes</NavLink>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/"  onClick={(e) => {handleHome(); scrollToTop()}}>Home</NavLink>
+            <NavLink  onClick={scrollToTop} to="/about">About</NavLink>
+            <NavLink  onClick={scrollToTop} to="/recipes">Recipes</NavLink>
+            <NavLink  onClick={scrollToTop} to="/contact">Contact</NavLink>
             
           </Nav>
         </Navbar.Collapse>
