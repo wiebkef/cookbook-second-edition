@@ -2,13 +2,6 @@ import React from 'react';
 import "./Footer.css"
 
 const Newsletter = () => {
-  const sectionStyle = {
-    backgroundImage: 'path/to/images/wallpaper.jpg..jpeg',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    height: '400px',
-  };
 
   return (
     <div className='newsletter'>
@@ -16,24 +9,12 @@ const Newsletter = () => {
         <div className='row'>
 
           <div className='col'>
-            <p>Receive our Updates</p>
-            <ul className='text-unstyled'>
-              <li>
-                <a href=''>Home</a>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <div className='btn'>
-            <div className='container center'>
-              <button type='button' className='but btn-outline-info'>
-                Subscribe For Newsletter
-
-              </button>
-
-            </div>
+            <p>Receive Updates by subscribing for our Newsletter</p>
+            <input type='email' className='input' placeholder='Email'/>
+            <br />
+            <input type='password' className='input' placeholder='password'/>
+            <br />
+            <button type='submit' className='button  background-color: #C7CEEA!important;'> Subscribe </button>
 
           </div>
 

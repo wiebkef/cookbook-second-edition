@@ -54,11 +54,12 @@ footer {
     flex:1;
   }
 
-  .Newsletter{
-    background-image: url('https://images.pexels.com/photos/776656/pexels-photo-776656.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
+  .newsletter{
+    background-color: #FF9AA2;
+    background-image: url(/src/images/wallpaper.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    padding: 2rem;
   }
 
 .btn {

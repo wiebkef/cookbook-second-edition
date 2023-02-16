@@ -109,9 +109,9 @@ const handleHome = () => {
 
       <div className="page-container">
         <div className="Content-wrap">
-          <hr />
+        
           <Newsletter></Newsletter>
-          <hr />
+    
           <Footer>
             <div>Footer Section</div>
           </Footer>
