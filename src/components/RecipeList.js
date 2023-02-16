@@ -4,6 +4,7 @@ import HeroInternal from "./HeroInternal";
 import Searchbar from "./Searchbar";
 
 function RecipeList({ recipes, handleSearch, setSearch, searchTerm }) {
+
   return (
     <div>
       <HeroInternal />

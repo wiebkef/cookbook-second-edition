@@ -52,14 +52,43 @@ function App() {
       })
       .catch(console.log("Promise: THERE IS AN ERROR"));
   };
+
+  const handleCategory = (search) => {
+
+    console.log('WHAAAAAAAAAAAATT');
+    client
+      .getEntries({
+        query: search,
+      })
+      .then((response) => {
+        console.log(response.items);
+        //console.log("HERE", entry);
+        setRecipes(response.items);
+        setLoading(false);
+      })
+      .catch(console.log("Promise: THERE IS AN ERROR"));
+  };
+
+const handleHome = () => {
+  console.log('WHAAAAAAAAAAAATT HOME?');
+  client
+  .getEntries("cookbook")
+  .then((result) => {
+    console.log("SHJSHJ", result);
+    setRecipes(result.items);
+  })
+  .catch(console.error);
+}
+
+
   return (
     <div className="App">
       <header>
-        <Navigation />
+        <Navigation handleHome={handleHome} />
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<Home recipes={recipes} />} />
+          <Route path="/" element={<Home recipes={recipes} handleSearch={handleSearch} searchTerm={search} setSearch={setSearch} handleCategory={handleCategory} />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route
@@ -80,9 +109,9 @@ function App() {
 
       <div className="page-container">
         <div className="Content-wrap">
-          <hr />
+        
           <Newsletter></Newsletter>
-          <hr />
+    
           <Footer>
             <div>Footer Section</div>
           </Footer>
