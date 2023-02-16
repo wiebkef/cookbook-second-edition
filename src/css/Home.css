@@ -25,6 +25,8 @@
     z-index: 0;
 }
 
+
+
 .categories {
     margin-top: -125px;
     position: relative;
@@ -83,6 +85,10 @@
 @keyframes showingoff {
     0% {background-color:rgba(169,169,169,0.0);}
     100% {background-color:rgba(169,169,169,1);}
+}
+
+.latest-wrapper {
+    padding: .75rem;
 }
 
 .latest-news {

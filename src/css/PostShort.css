@@ -1,0 +1,36 @@
+.bg_0 {
+  background-color: #b5ead7;
+}
+
+.bg_1 {
+  background-color: #ffb7b2;
+}
+
+.bg_2 {
+  background-color: #ffdac1;
+}
+
+.bg_3 {
+  background-color: #e2f0cb;
+}
+
+.postShortCard {
+  box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+.iconsShort-wrapper {
+  display: flex;
+  column-gap: 0.5rem;
+  background-color: white;
+}
+
+.iconsFirstShort-wrapper {
+  display: flex;
+  column-gap: 0.5rem;
+  background-color: white;
+  border-radius: 0px 0px 0px 30px;
+}
+
+.short-wrapper {
+  width: 375px;
+}
