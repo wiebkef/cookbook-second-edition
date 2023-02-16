@@ -23,14 +23,14 @@ function PostShort({ recipe, postColor }) {
   return (
     <div className={`${colorClass} d-flex postShortCard`}>
       <div className="row justify-content-start">
-        <div className="col-4  p-0">
+        <div className="col-xs-12 col-sm-10 col-md-4 col-lg-4 col-xxl-3 p-lg-0">
           <img
             src={recipe.fields.thumbnail.fields.file.url}
             className="img-fluid d-block start"
             alt={recipe.fields.image.fields.description}
           />
         </div>
-        <div className="col-8">
+        <div className="col-xs-10 col-sm-10 col-md-8 col-lg-8 col-xxl-9">
           <div className="d-flex flex-col justify-content-end">
             <div className="iconsFirstShort-wrapper p-3">
               <span class="material-symbols-outlined">schedule</span>
@@ -45,11 +45,11 @@ function PostShort({ recipe, postColor }) {
               {new Date(recipe.fields.date).toLocaleDateString()}
             </div>
           </div>
-          <div className="lora-font text-start ps-3 mt-4 d-flex flex-column">
+          <div className="lora-font text-start ps-3 mt-4">
             <h2>{recipe.fields.title}</h2>
             <p>{recipe.fields.description.content[0].content[0].value}</p>
             <a
-              className="btn btn-primary col-3 "
+              className="btn btn-primary"
               href={`/recipes/${recipe.sys.id}`}
             >
               Read more

@@ -113,7 +113,7 @@ const handleHome = () => {
         
           <Newsletter></Newsletter>
     
-          <Footer>
+          <Footer handleHome={handleHome}>
             <div>Footer Section</div>
           </Footer>
         </div>
