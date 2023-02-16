@@ -1,8 +1,9 @@
 import React from 'react';
 import "./Footer.css"
 import logo from "../images/chomp-logo.svg";
+import { Link } from "react-router-dom";
 
-const Footer = () => {
+const Footer = ({handleHome, scrollToTop}) => {
   return (
     <div className='main-footer'>
       <div className='container'>
@@ -16,27 +17,27 @@ const Footer = () => {
               </div>
               
               <div className='col'>
-                <h3>Navigation</h3>
-                <ul className='list-unstyled'>
-                      <li>
-                      <a href='/'>Home</a>
+                <h3 className='anton-font text-start'>Navigation</h3>
+                <ul className='list-unstyled text-start'>
+                      <li onClick={scrollToTop}>
+                      <Link to="/"  onClick={(e) => handleHome()}>Home</Link>
                       </li>
-                      <li>
-                      <a href='/'>About</a> 
+                      <li onClick={scrollToTop}>
+                      <Link to="/about">About</Link>
                         </li>
-                      <li>
-                      <a href='/'>Recipes</a>
+                      <li onClick={scrollToTop}>
+                      <Link to="/recipes">Recipes</Link>
                         </li>
-                      <li>
-                      <a href='/'>Contact</a> 
+                      <li onClick={scrollToTop}>
+                      <Link to="/contact">Contact</Link>
                         </li>
                 </ul>
 
               </div>
              
               <div className='col'>
-                <h4>Our Terms</h4>
-                <ul className='list-unstyled'>
+                <h4 className='anton-font text-start'>Our Terms</h4>
+                <ul className='list-unstyled text-start'>
                       <li>Terms of use</li>
                       <l1>Impressum</l1>
 

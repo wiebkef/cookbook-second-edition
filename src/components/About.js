@@ -35,19 +35,21 @@ function About() {
           </div>
         </div>
         <br /><br />
-        <div className='row text-center'>
-          <img src="https://giffiles.alphacoders.com/150/150759.gif" alt="Candle" />
+        <div className='row justify-content-center'>
+          <div className='col-lg-6 text-center'>
+          <img src="https://giffiles.alphacoders.com/150/150759.gif" alt="Candle" width={350} />
           
-          <h2 className='mt-3'>In respect to our Brothers and Sisters in Turkey:</h2>
-          <p>
+          <h4 className='mt-3 text-start lora-font'>In respect to our Brothers and Sisters in Turkey:</h4>
+          <p className='text-start'>
           To the families who have lost loved ones in the devastating earthquake in Turkey, our hearts go out to you during this incredibly difficult time. We offer our deepest condolences to you and your community, and we stand in solidarity with you as you mourn your losses.</p>
 
-          <p>We know that no words can ease the pain of losing a family member or friend. The loss of a loved one is a profound and lasting sorrow that can never be fully healed. But we hope that you can find some comfort in knowing that you are not alone in your grief. The entire world is standing with you, offering support, prayers, and love during this heartbreaking time.</p>
+          <p className='text-start'>We know that no words can ease the pain of losing a family member or friend. The loss of a loved one is a profound and lasting sorrow that can never be fully healed. But we hope that you can find some comfort in knowing that you are not alone in your grief. The entire world is standing with you, offering support, prayers, and love during this heartbreaking time.</p>
 
-          <p>We also want to express our admiration for your strength and resilience in the face of such a devastating tragedy. We know that the road ahead will be difficult, but we believe in your ability to persevere and rebuild. We are here to support you in any way we can, whether that means providing aid and resources, or simply offering a listening ear.</p>
+          <p className='text-start'>We also want to express our admiration for your strength and resilience in the face of such a devastating tragedy. We know that the road ahead will be difficult, but we believe in your ability to persevere and rebuild. We are here to support you in any way we can, whether that means providing aid and resources, or simply offering a listening ear.</p>
 
-          <p>As you begin to pick up the pieces and rebuild your lives, please know that you are not forgotten. Your loved ones will always be remembered, and their memory will continue to inspire us to work towards a better and more compassionate world. We send our love and support to you, and we hope that you can find peace and healing in the days and weeks to come.
+          <p className='text-start'>As you begin to pick up the pieces and rebuild your lives, please know that you are not forgotten. Your loved ones will always be remembered, and their memory will continue to inspire us to work towards a better and more compassionate world. We send our love and support to you, and we hope that you can find peace and healing in the days and weeks to come.
           </p>
+          </div>
         </div>
         </div>
       </Container>

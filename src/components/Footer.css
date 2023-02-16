@@ -8,8 +8,20 @@
 }
 
 #copyright{
-    font-family:fantasy;
+
     align-content: center;
     text-align: center;
 }
 
+.newsletter-input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 100px;
+    padding: 10px 100px 10px 20px;
+    line-height: 1;
+    box-sizing: border-box;
+    outline: none;
+    background: white;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}

@@ -11,7 +11,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Recipe from "./components/Recipe";
 import Categories from "./components/Categories";
-
+import { animateScroll } from 'react-scroll';
 
 var contentful = require("contentful");
 
@@ -37,6 +37,11 @@ function App() {
       })
       .catch(console.error);
   }, []);
+
+// Scroll page to top on page change - specially with footer links
+  const scrollToTop = () => {
+    window.scrollTo(0, 0)
+  }
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -85,7 +90,7 @@ const handleHome = () => {
   return (
     <div className="App">
       <header>
-        <Navigation handleHome={handleHome} />
+        <Navigation scrollToTop={scrollToTop}  handleHome={handleHome} />
       </header>
       <main>
         <Routes>
@@ -113,7 +118,7 @@ const handleHome = () => {
         
           <Newsletter></Newsletter>
     
-          <Footer>
+          <Footer scrollToTop={scrollToTop} handleHome={handleHome}>
             <div>Footer Section</div>
           </Footer>
         </div>
