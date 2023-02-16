@@ -102,6 +102,27 @@ footer {
     box-shadow: 1px 3px 5px rgba(0,0,0,0.0);
     background-color: #C7CEEA!important;
   }
+
+
+  .subscribe-button {
+    color: rgb(18, 17, 16);
+    display: grid;
+    font-style:italic;
+    font-weight: bold;
+    font-family:sans-serif;
+    font-size: 20px;
+    padding: 10px 20px;
+    padding-bottom: 2rem;
+    margin-bottom: 4rem 4rem;
+    border:rgb(216, 202, 211);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .subscribe-button:hover {
+    background-color: #a68c9c;
+  }
+
   
   @media only screen and (max-width: 768px) {
     .images {
