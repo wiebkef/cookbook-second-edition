@@ -12,6 +12,7 @@ import Contact from "./components/Contact";
 import Recipe from "./components/Recipe";
 import Categories from "./components/Categories";
 
+
 var contentful = require("contentful");
 
 function App() {

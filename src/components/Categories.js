@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Container from 'react-bootstrap/Container';
 import Figure from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom'
@@ -9,22 +9,31 @@ import fish from "../images/fish.svg"
 
 
 function Categories({ recipes, handleSearch, setSearch, setSearchTerm, handleCategory }) {
+
+
+  const recipeCategories = recipes.map(function(recipe) { return recipe.fields.categories; });
+
+  const getUniqueCategories = (array) => ( [...new Set(array) ]);
   
+  let uniqueCategories = getUniqueCategories(recipeCategories);
+
+  
+
   return (
     <div>
         
         
         <div className='container categories'>
           <div className='row'>
-          {recipes.length > 0 ? (
-          recipes.map((recipe) => (
+          {uniqueCategories.length > 0 ? (   
+          uniqueCategories.map((recipe) => (
           
-            <div key={recipe.sys.id} className='col-xs-12 col-sm-12 col-md-6 col-lg-3 '>
+            <div key={recipe} className='col-xs-12 col-sm-12 col-md-6 col-lg-3 '>
               <div className='images'>
-              <Link to="/recipes" onClick={(e) => handleCategory(recipe.fields.categories)} >
+              <Link to="/recipes" onClick={(e) => handleCategory(recipe)} >
 
-              <img src={`./${recipe.fields.categories}.svg`}/>
-                <h3>{recipe.fields.categories}</h3>
+              <img src={`./${recipe}.svg`}/>
+                <h3>{recipe}</h3>
               </Link>
               </div>
             </div>
