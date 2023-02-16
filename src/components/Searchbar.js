@@ -1,38 +1,22 @@
-import React, { useEffect, useState } from "react";
-import RecipeList from "./RecipeList";
-import { Navigate, Routes, Route } from "react-router-dom";
-import FloatingLabel from "react-bootstrap/FloatingLabel";
-import Form from "react-bootstrap/Form";
-var contentful = require("contentful");
+import React from "react";
+import "../css/Searchbar.css";
 
 const Searchbar = ({ handleSearch, setSearch }) => {
-  const client = contentful.createClient({
-    space: process.env.REACT_APP_SPACE_ID,
-    accessToken: process.env.REACT_APP_ACCESS_TOKEN,
-  });
-
   return (
-    <>
-      <Form onSubmit={handleSearch}>
-        <Form.Group className="mb-3 d-flex" controlId="formBasicEmail">
-          <FloatingLabel
-            controlId="floatingInput"
-            label="Find a recipe"
-            className="mb-3"
-          >
-            <Form.Control
-              type="text"
-              placeholder=""
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </FloatingLabel>
-          <div>
-            <button className="btn btn-primary">Find</button>
-          </div>
-        </Form.Group>
-      </Form>
-      {/*   {recipes && <RecipeList recipes={recipes} searchTerm={search} />} */}
-    </>
+    <div className="background1 pb-4">
+      <h3 className="lora-font">Search for Recipes</h3>
+      <form onSubmit={handleSearch} className="mx-auto custom-search">
+        <input
+          className="custom-search-input text-small"
+          type="text"
+          placeholder="Ingredients, Name, ..."
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <button className="btn btn-primary pb-3 custom-search-botton lora-font">
+          find
+        </button>
+      </form>
+    </div>
   );
 };
 
