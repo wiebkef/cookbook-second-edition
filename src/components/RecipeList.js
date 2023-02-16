@@ -3,30 +3,28 @@ import PostShort from "./PostShort";
 import HeroInternal from "./HeroInternal";
 import Searchbar from "./Searchbar";
 
-function RecipeList({
-  recipes,
-  handleSearch,
-  setSearch,
-  searchTerm
-}) {
+function RecipeList({ recipes, handleSearch, setSearch, searchTerm }) {
 
-  console.log('Aqui eh o termo' + searchTerm)
   return (
     <div>
       <HeroInternal />
       <Searchbar handleSearch={handleSearch} setSearch={setSearch} />
-
-      <h2>{searchTerm}</h2>
-      {console.log(recipes.length)}
-      {recipes.length > 0 ? (
-        recipes.map((recipe) => (
-          <div key={recipe.sys.id}>
-            <PostShort recipe={recipe} />
-          </div>
-        ))
-      ) : (
-        <div>No results</div>
-      )}
+      <div className="container">
+        <h2 className="lora-font text-start mt-5">
+          {searchTerm !== "Recipes"
+            ? `Showing the results for "${searchTerm}"`
+            : "Recipes"}
+        </h2>
+        {recipes.length > 0 ? (
+          recipes.map((recipe, index) => (
+            <div className="my-5" key={recipe.sys.id}>
+              <PostShort recipe={recipe} postColor={index} />
+            </div>
+          ))
+        ) : (
+          <div>No results</div>
+        )}
+      </div>
     </div>
   );
 }
