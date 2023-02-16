@@ -1,6 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Lora:wght@400;600;700&display=swap');
+@import "react-alice-carousel/lib/alice-carousel.css";
 
 
+.alice-carousel__wrapper {
+  margin-bottom: -1rem;
+}
+
+.alice-carousel__dots {
+  margin: 0px auto!important;
+  z-index: 9;
+  position: relative;
+}
+
+.alice-carousel__prev-btn, .alice-carousel__next-btn {
+  display: none!important;
+}
 
 .anton-font {
   font-family: 'Anton', sans-serif;
@@ -87,3 +101,9 @@ footer {
     box-shadow: 1px 3px 5px rgba(0,0,0,0.0);
     background-color: #C7CEEA!important;
   }
+  
+  @media only screen and (max-width: 768px) {
+    .images {
+        margin-bottom: 1.5rem;
+    }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Footer.css"
+import logo from "../images/chomp-logo.svg";
 
 const Footer = () => {
   return (
@@ -7,8 +8,8 @@ const Footer = () => {
       <div className='container'>
         <div className='row'>
              
-              <div className='col'>
-                  <h2>CHOMP CHEFS INC</h2>
+              <div className='col text-start'>
+                  <img src={logo} width="200px" />
                   <ul className='list-unstyled'>
                       <p>Find out more about our blog, and also find all kinds of recipes. You can easily choose from our main ingredientsß </p>
                   </ul>
@@ -39,7 +40,7 @@ const Footer = () => {
         <hr />
         <div className='row' id='copyright'>
           <p className='col-sm'>
-              &copy;{new Date().getFullYear()} CHOMP CHEFS INC | All Rights Reserved | Terms of Services | Privacy
+             {new Date().getFullYear()} CHOMP CHEFS INC | All Rights Reserved &copy; | Terms of Services | Privacy
           </p>
 
         </div>
