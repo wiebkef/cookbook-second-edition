@@ -17,10 +17,18 @@ const Footer = () => {
               <div className='col'>
                 <h3>Navigation</h3>
                 <ul className='list-unstyled'>
-                      <li>Home</li>
-                      <li>About</li>
-                      <li>Recipes</li>
-                      <li>Contact</li>
+                      <li>
+                      <a href='/'>Home</a>
+                      </li>
+                      <li>
+                      <a href='/'>About</a> 
+                        </li>
+                      <li>
+                      <a href='/'>Recipes</a>
+                        </li>
+                      <li>
+                      <a href='/'>Contact</a> 
+                        </li>
                 </ul>
 
               </div>
