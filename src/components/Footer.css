@@ -1,27 +1,35 @@
-.main-footer{
-    color:white;
-    background-color: rgb(26, 23, 23);
-    padding-top: 3em;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+.main-footer {
+  color: white;
+  background-color: rgb(26, 23, 23);
+  padding-top: 3em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
-#copyright{
-
-    align-content: center;
-    text-align: center;
+#copyright {
+  align-content: center;
+  text-align: center;
 }
 
 .newsletter-input {
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 100px;
-    padding: 10px 100px 10px 20px;
-    line-height: 1;
-    box-sizing: border-box;
-    outline: none;
-    background: white;
-    font-size: 1rem;
-    margin-bottom: 1rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  padding: 10px 100px 10px 20px;
+  line-height: 1;
+  box-sizing: border-box;
+  outline: none;
+  background: white;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-link-item {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-link-item:hover {
+  color: rgb(167, 167, 167);
 }

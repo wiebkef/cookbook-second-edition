@@ -45,13 +45,10 @@ function PostShort({ recipe, postColor }) {
               {new Date(recipe.fields.date).toLocaleDateString()}
             </div>
           </div>
-          <div className="lora-font text-start ps-3 mt-4">
+          <div className="lora-font text-start px-3 mt-4">
             <h2>{recipe.fields.title}</h2>
             <p>{recipe.fields.description.content[0].content[0].value}</p>
-            <a
-              className="btn btn-primary"
-              href={`/recipes/${recipe.sys.id}`}
-            >
+            <a className="btn btn-primary" href={`/recipes/${recipe.sys.id}`}>
               Read more
             </a>
           </div>
