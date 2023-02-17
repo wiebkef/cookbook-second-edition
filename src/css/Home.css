@@ -113,6 +113,11 @@
     color: #333333;
 }
 
+.thumbnail a:hover  {
+    text-decoration: none;
+    color: #6a887d;
+}
+
 .thumbnail img {
     width: 100%;
     box-shadow: 1px 3px 16px rgba(0,0,0,0.2);
