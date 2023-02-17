@@ -156,7 +156,10 @@ footer {
 
     .navbar-nav a {
       padding: 1rem;
-
-
     }
+
+    .post-header h2 {
+      margin-top: 40px;
+    }
+
 }
