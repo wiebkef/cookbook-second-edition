@@ -11,7 +11,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Recipe from "./components/Recipe";
 import Categories from "./components/Categories";
-import { animateScroll } from 'react-scroll';
+import { animateScroll } from "react-scroll";
 
 var contentful = require("contentful");
 
@@ -38,10 +38,10 @@ function App() {
       .catch(console.error);
   }, []);
 
-// Scroll page to top on page change - specially with footer links
+  // Scroll page to top on page change - specially with footer links
   const scrollToTop = () => {
-    window.scrollTo(0, 0)
-  }
+    window.scrollTo(0, 0);
+  };
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -60,41 +60,53 @@ function App() {
   };
 
   const handleCategory = (search) => {
-
-    console.log('WHAAAAAAAAAAAATT');
+    console.log("WHAAAAAAAAAAAATT", search);
     client
-      .getEntries({
-        query: search,
-      })
+      .getEntries()
       .then((response) => {
         console.log(response.items);
-        //console.log("HERE", entry);
-        setRecipes(response.items);
+        console.log("HERE", response.items);
+        const categoryRecipes = response.items.filter((item) => {
+          console.log("HUUUUUUU", item.fields.categories);
+          return item.fields.categories === search;
+        });
+        console.log("MMMMMMMMM", categoryRecipes);
+        setRecipes(categoryRecipes);
         setLoading(false);
       })
       .catch(console.log("Promise: THERE IS AN ERROR"));
   };
 
-const handleHome = () => {
-  console.log('WHAAAAAAAAAAAATT HOME?');
-  client
-  .getEntries("cookbook")
-  .then((result) => {
-    console.log("SHJSHJ", result);
-    setRecipes(result.items);
-  })
-  .catch(console.error);
-}
-
+  const handleHome = () => {
+    console.log("WHAAAAAAAAAAAATT HOME?");
+    client
+      .getEntries("cookbook")
+      .then((result) => {
+        console.log("SHJSHJ", result);
+        setRecipes(result.items);
+      })
+      .catch(console.error);
+  };
 
   return (
     <div className="App">
       <header>
-        <Navigation scrollToTop={scrollToTop}  handleHome={handleHome} />
+        <Navigation scrollToTop={scrollToTop} handleHome={handleHome} />
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<Home recipes={recipes} handleSearch={handleSearch} searchTerm={search} setSearch={setSearch} handleCategory={handleCategory} />} />
+          <Route
+            path="/"
+            element={
+              <Home
+                recipes={recipes}
+                handleSearch={handleSearch}
+                searchTerm={search}
+                setSearch={setSearch}
+                handleCategory={handleCategory}
+              />
+            }
+          />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route
@@ -115,9 +127,8 @@ const handleHome = () => {
 
       <div className="page-container">
         <div className="Content-wrap">
-        
           <Newsletter></Newsletter>
-    
+
           <Footer scrollToTop={scrollToTop} handleHome={handleHome}>
             <div>Footer Section</div>
           </Footer>
