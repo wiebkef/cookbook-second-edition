@@ -64,6 +64,10 @@
     color: #333333;
 }
 
+.images a:hover {
+    color: #6a887d;
+}
+
 .images a h3  {
     text-transform: capitalize;
 }

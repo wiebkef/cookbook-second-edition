@@ -28,7 +28,7 @@ function Contact() {
             <textarea className="form-control" id="exampleFormControlInput1" placeholder="Would you like us to call you?"></textarea>
           </div>
           <div className='mb-3 text-start'>
-          <Button name="Back to the Top" buttonClass="btn btn-primary" buttonTarget="#" />
+          <Button name="Submit" buttonClass="btn btn-primary" buttonTarget="#" />
           </div>
           </div>
         </div>
