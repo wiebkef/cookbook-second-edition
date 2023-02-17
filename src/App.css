@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Lora:wght@400;600;700&display=swap');
 @import "react-alice-carousel/lib/alice-carousel.css";
 
-.navbar a:hover {color: #333333}
+.navbar a:hover {color: #6a887d}
 
 .alice-carousel__wrapper {
   margin-bottom: -1rem;
@@ -9,6 +9,7 @@
 
 .alice-carousel__dots {
   margin: 0px auto!important;
+  padding-bottom: 2rem!important;
   z-index: 9;
   position: relative;
 }
@@ -141,5 +142,21 @@ footer {
   @media only screen and (max-width: 768px) {
     .images {
         margin-bottom: 1.5rem;
+    }
+
+    .navbar-toggler span {
+      color: white;
+    }
+
+    #basic-navbar-nav {
+      box-shadow: 1px 10px 30px rgba(0,0,0,0.2);
+      background-color: #333;
+      z-index: 99;
+    }
+
+    .navbar-nav a {
+      padding: 1rem;
+
+
     }
 }

@@ -13,6 +13,8 @@ function Navigation({handleHome, scrollToTop }) {
 
   const [ isScrolled, setIsScrolled ] = useState(false);
 
+  const [isClassActive, setIsClassActive] = useState(true);
+
   const handleScroll = () => {
     const position = window.pageYOffset;
     if(position > 30) {
@@ -34,7 +36,18 @@ function Navigation({handleHome, scrollToTop }) {
 
   }, [])
 
+  const handleMobileNav = (e) => {
 
+    const navBar = document.querySelector('.navbar-collapse');
+    console.log(navBar);
+    if(e.target.innerText == 'menu') {
+      setIsClassActive(false);
+
+    } else if (e.target.innerText == 'close') {
+
+      setIsClassActive(true);
+    }
+  }
 
   return (
 
@@ -45,16 +58,22 @@ function Navigation({handleHome, scrollToTop }) {
           <img src={logo} alt="Chomp Blog" width="150px"  />
           </Link>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse className='justify-content-end' id="basic-navbar-nav" >
+        <button aria-controls="basic-navbar-nav" onClick={handleMobileNav} type="button" aria-label="Toggle navigation" className="navbar-toggler collapsed">
+          <span class="material-symbols-outlined">
+          {isClassActive ? 'menu' : 'close'}
+          </span>
+        </button>
+        <div className={isClassActive ? 'justify-content-end colapse navbar-collapse collapse' : 'justify-content-end colapse navbar-collapse'} id="basic-navbar-nav">
+
           <Nav className="nav justify-content-end">
-            <NavLink to="/"  onClick={(e) => {handleHome(); scrollToTop()}}>Home</NavLink>
-            <NavLink  onClick={scrollToTop} to="/about">About</NavLink>
-            <NavLink  onClick={scrollToTop} to="/recipes">Recipes</NavLink>
-            <NavLink  onClick={scrollToTop} to="/contact">Contact</NavLink>
+            <NavLink to="/"  onClick={(e) => {handleHome(); scrollToTop(); handleMobileNav()}}>Home</NavLink>
+            <NavLink  onClick={()=> {scrollToTop(); handleMobileNav()}} to="/about">About</NavLink>
+            <NavLink  onClick={()=> {scrollToTop(); handleMobileNav()}} to="/recipes">Recipes</NavLink>
+            <NavLink  onClick={()=> {scrollToTop(); handleMobileNav()}} to="/contact">Contact</NavLink>
             
           </Nav>
-        </Navbar.Collapse>
+
+        </div>
       </Container>
     </Navbar>
 
