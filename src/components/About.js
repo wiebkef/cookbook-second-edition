@@ -12,7 +12,7 @@ function About() {
   return (
     <div>
       <HeroInternal />
-      <Container>
+      <Container className='mb-5'>
         <div className='post-header background_0'>
         <h2 className="lora-font">About us</h2>
         <p className="lora-font">We are 4 Students from WBS Coding School, and we were happy to work together on this React Project usind Contentful as a Headless CMS Solution.</p>
