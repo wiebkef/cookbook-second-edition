@@ -1,5 +1,5 @@
 import React from "react";
-import "./Footer.css";
+import "../css/Footer.css";
 import logo from "../images/chomp-logo.svg";
 import { Link } from "react-router-dom";
 
@@ -9,7 +9,7 @@ const Footer = ({ handleHome, scrollToTop }) => {
       <div className="container">
         <div className="row justify-content-space-around">
           <div className="col ">
-            <img src={logo} width="200px" />
+            <img src={logo} width="200px" alt="logo" />
             <ul className="list-unstyled">
               <p>
                 Find out more about our blog, and also find all kinds of

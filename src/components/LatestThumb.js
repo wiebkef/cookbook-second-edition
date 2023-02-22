@@ -1,18 +1,18 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-function LatestThumb({thumb}) {
-    console.log(thumb.fields)
+function LatestThumb({ thumb }) {
   return (
-
-      <div className='thumbnail'>
-        <Link to={`/recipes/${thumb.sys.id}`}>
-          <img src={thumb.fields.thumbnail.fields.file.url} />
-          <h3>{thumb.fields.title}</h3>   
-        </Link>
-      </div>
-
-  )
+    <div className="thumbnail">
+      <Link to={`/recipes/${thumb.sys.id}`}>
+        <img
+          src={thumb.fields.thumbnail.fields.file.url}
+          alt="latest recipes"
+        />
+        <h3>{thumb.fields.title}</h3>
+      </Link>
+    </div>
+  );
 }
 
-export default LatestThumb
+export default LatestThumb;
