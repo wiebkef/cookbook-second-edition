@@ -1,26 +1,19 @@
 import "./App.css";
-import { Routes, Route, NavLink, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Navigation from "./components/Nav";
 import Newsletter from "./components/Newsletter";
-import Button from "./components/Button";
 import Footer from "./components/Footer";
 import RecipeList from "./components/RecipeList";
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Recipe from "./components/Recipe";
-import Categories from "./components/Categories";
-import { animateScroll } from "react-scroll";
-
 var contentful = require("contentful");
 
 function App() {
-  // this is just some spaceholder stuff until we have the actual contentful schemes and contents
-
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("Recipes");
-  const [recipesSearch, setRecipesSearch] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const client = contentful.createClient({
@@ -32,10 +25,9 @@ function App() {
     client
       .getEntries("cookbook")
       .then((result) => {
-        console.log("SHJSHJ", result);
         setRecipes(result.items);
       })
-      .catch(console.error);
+      .catch((err) => console.error(err));
   }, []);
 
   // Scroll page to top on page change - specially with footer links
@@ -45,47 +37,37 @@ function App() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log(search);
     client
       .getEntries({
         query: search,
       })
       .then((response) => {
-        console.log(response.items);
-        //console.log("HERE", entry);
         setRecipes(response.items);
         setLoading(false);
       })
-      .catch(console.log("Promise: THERE IS AN ERROR"));
+      .catch((err) => console.error(err));
   };
 
   const handleCategory = (search) => {
-    console.log("WHAAAAAAAAAAAATT", search);
     client
       .getEntries()
       .then((response) => {
-        console.log(response.items);
-        console.log("HERE", response.items);
         const categoryRecipes = response.items.filter((item) => {
-          console.log("HUUUUUUU", item.fields.categories);
           return item.fields.categories === search;
         });
-        console.log("MMMMMMMMM", categoryRecipes);
         setRecipes(categoryRecipes);
         setLoading(false);
       })
-      .catch(console.log("Promise: THERE IS AN ERROR"));
+      .catch((err) => console.error(err));
   };
 
   const handleHome = () => {
-    console.log("WHAAAAAAAAAAAATT HOME?");
     client
       .getEntries("cookbook")
       .then((result) => {
-        console.log("SHJSHJ", result);
         setRecipes(result.items);
       })
-      .catch(console.error);
+      .catch((err) => console.error(err));
   };
 
   return (
